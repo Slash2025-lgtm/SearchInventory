@@ -35,7 +35,7 @@ public class Main {
             }  else if (selected == 4) {
                 try {
                     System.out.println("=== Add Product ===");
-                    FileWriter fileWriter = new FileWriter("src/main/resources/Inventory.csv");
+                    FileWriter fileWriter = new FileWriter("src/main/resources/Inventory.csv", true);
                     BufferedWriter bufWriter = new BufferedWriter(fileWriter);
 
                     System.out.println("Enter in the Product ID: ");
