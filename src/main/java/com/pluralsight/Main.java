@@ -7,9 +7,9 @@ public class Main {
     public static void main(String[] args) {
         Scanner keyboard = new Scanner(System.in);
         boolean exit = false;
-        while (exit == false) {
+        while (!exit) {
             ArrayList<Product> invList = getInventory();
-            Collections.sort(invList, Comparator.comparing(Product::getId));
+            invList.sort(Comparator.comparing(Product::getId));
             System.out.println("=== Menu ===");
             System.out.println("[1] List all products\n" + "[2] Lookup a product by its id\n" + "[3] Find all products within a price range\n" + "[4] Add a new product\n" + "[5] Quit the application");
             int selected = keyboard.nextInt();
@@ -19,7 +19,7 @@ public class Main {
                 System.out.println("=== Products ===");
                 while (i < invList.size()) {
                     Product product = invList.get(i);
-                    System.out.printf("Product ID: %d \nProduct Name: %s\nProduct Price: %.2f\n", product.getId(), product.getName(), product.getPrice());
+                    System.out.printf("Product ID: %s \nProduct Name: %s\nProduct Price: %.2f\n", product.getId(), product.getName(), product.getPrice());
                     System.out.println();
                     i++;
                 }
@@ -66,9 +66,10 @@ public class Main {
             BufferedReader bufReader = new BufferedReader(fileReader);
 
             String input;
+            bufReader.readLine();
             while ((input = bufReader.readLine()) != null) {
                 String[] infoList = input.split("[|]");
-                int id = Integer.parseInt(infoList[0]);
+                String id = infoList[0];
                 String name = infoList[1];
                 double price = Double.parseDouble(infoList[2]);
                 String department = infoList[3];
