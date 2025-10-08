@@ -19,7 +19,7 @@ public class Main {
                 System.out.println("=== Products ===");
                 while (i < invList.size()) {
                     Product product = invList.get(i);
-                    System.out.printf("Product ID: %s \nProduct Name: %s\nProduct Price: %.2f\n", product.getId(), product.getName(), product.getPrice());
+                    System.out.printf("Product ID: %s \nProduct Name: %s\nProduct Price: $%.2f\nDepartment %s\n", product.getId(), product.getName(), product.getPrice(), product.getDepartment());
                     System.out.println();
                     i++;
                 }
