@@ -34,6 +34,7 @@ public class Main {
                 }
             }  else if (selected == 4) {
                 try {
+                    System.out.println("=== Add Product ===");
                     FileWriter fileWriter = new FileWriter("src/main/resources/Inventory.csv");
                     BufferedWriter bufWriter = new BufferedWriter(fileWriter);
 
