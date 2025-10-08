@@ -46,8 +46,11 @@ public class Main {
                     System.out.println("Enter in the Product Price: ");
                     String productPrice = keyboard.next();
 
+                    System.out.println("Enter in the Product Department");
+                    String productDepartment = keyboard.next();
+
                     System.out.println(productName + " Has been added to the Inventory");
-                    bufWriter.write("\n" + productId + "|" + productName + "|" + productPrice + "|");
+                    bufWriter.write("\n" + productId + "|" + productName + "|" + productPrice + "|" + productDepartment);
                     bufWriter.close();
 
                 } catch (IOException e) {
