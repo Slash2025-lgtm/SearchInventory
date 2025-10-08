@@ -11,7 +11,7 @@ public class Main {
             ArrayList<Product> invList = getInventory();
             invList.sort(Comparator.comparing(Product::getId));
             System.out.println("=== Menu ===");
-            System.out.println("[1] List all products\n" + "[2] Lookup a product by its id\n" + "[3] Find all products within a price range\n" + "[4] Add a new product\n" + "[5] Quit the application");
+            System.out.print("[1] List all products\n" + "[2] Lookup a product by its id\n" + "[3] Find all products within a price range\n" + "[4] Add a new product\n" + "[5] Quit the application\nEnter In A Number: ");
             int selected = keyboard.nextInt();
 
             if (selected == 1) {
