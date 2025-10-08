@@ -19,7 +19,7 @@ public class Main {
                 System.out.println("=== Products ===");
                 while (i < invList.size()) {
                     Product product = invList.get(i);
-                    System.out.printf("Product ID: %s \nProduct Name: %s\nProduct Price: $%.2f\nDepartment %s\n", product.getId(), product.getName(), product.getPrice(), product.getDepartment());
+                    System.out.printf("Product ID: %d \nProduct Name: %s\nProduct Price: $%.2f\n", product.getId(), product.getName(), product.getPrice());
                     System.out.println();
                     i++;
                 }
@@ -47,11 +47,8 @@ public class Main {
                     System.out.println("Enter in the Product Price: ");
                     String productPrice = keyboard.next();
 
-                    System.out.println("Enter in the Product Department");
-                    String productDepartment = keyboard.next();
-
                     System.out.println(productName + " Has been added to the Inventory");
-                    bufWriter.write("\n" + productId + "|" + productName + "|" + productPrice + "|" + productDepartment);
+                    bufWriter.write("\n" + productId + "|" + productName + "|" + productPrice);
                     bufWriter.close();
 
                 } catch (IOException e) {
@@ -73,11 +70,10 @@ public class Main {
             bufReader.readLine();
             while ((input = bufReader.readLine()) != null) {
                 String[] infoList = input.split("[|]");
-                String id = infoList[0];
+                int id = Integer.parseInt(infoList[0]);
                 String name = infoList[1];
                 double price = Double.parseDouble(infoList[2]);
-                String department = infoList[3];
-                invList.add(new Product(id, name, price, department));
+                invList.add(new Product(id, name, price));
             }
 
             bufReader.close();
